@@ -6,3 +6,11 @@ function getComputerChice(){
 
     return numberOption
 }
+
+function getHumanChoice(){
+    // haz que usuario introdusca una opcion
+    let numberOption = prompt("Elige: 1. Piedra, 2. Papel, 3. Tijeras: ")
+
+    return numberOption
+}
+
