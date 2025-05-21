@@ -78,7 +78,9 @@ function playGame(){
         playRound(humanSelection, computerSelection)
     }
 
-    if(humanScore > computerScore){
+    if(humanScore === computerScore){
+        alert(`Es un empate ambos sacaron un puntaje: ${humanScore}`)
+    }else if(humanScore > computerScore){
         alert(`Felicidades has ganado con un puntaje de: ${humanScore}`)
     }else{
         alert(`Lo siento has perdido, la computadora gano con un puntaje de: ${computerScore}`)
