@@ -1,6 +1,6 @@
 // registra las puntuaciones de los jugadores
 let humanScore = 0
-    computerScore = 0
+let computerScore = 0
 
 
 function getComputerChice(){
@@ -28,6 +28,50 @@ function getHumanChoice(){
     // retorna siempre en minuscula
     return option.toLowerCase()
 }
+
+
+function playRound(humanChoice, computerChoice){
+    // si el usuario elige una opcion igual a la computadora es empate
+    // si el usuario elige una opcion que la opcion de la computadora puede vencer perdiste
+    // las demas posibilidades el usuario gano 
+    if(humanChoice===computerChoice){
+        alert(`
+            Tu elegiste ${humanChoice} y la Pc eligio ${computerChoice}. Es un Empate!
+            El puntaje es User: ${humanScore} y Pc: ${computerScore}
+        `)
+    }else if(humanChoice === "papel" && computerChoice === 'tijeras'){
+        computerScore++
+        alert(`
+            Tu elegiste ${humanChoice} y la Pc eligio ${computerChoice}. Perdiste!
+            El puntaje es User: ${humanScore} y Pc: ${computerScore}
+        `)
+        
+    }else if(humanChoice === "piedra" && computerChoice === "papel"){
+        computerScore++
+        alert(`
+            Tu elegiste ${humanChoice} y la Pc eligio ${computerChoice}. Perdiste!
+            El puntaje es User: ${humanScore} y Pc: ${computerScore}
+        `)
+    }else if(humanChoice==="tijeras" && computerChoice === "piedra"){
+        computerScore++
+        alert(`
+            Tu elegiste ${humanChoice} y la Pc eligio ${computerChoice}. Perdiste!
+            El puntaje es User: ${humanScore} y Pc: ${computerScore}
+        `)
+    }else{
+        humanScore++
+        alert(`
+            Tu elegiste ${humanChoice} y la Pc eligio ${computerChoice}. Ganaste!
+            El puntaje es User: ${humanScore} y Pc: ${computerScore}
+        `)
+    }
+}
+
+// guardar las opciones de cada usuario en una variable
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChice()
+
+playRound(humanSelection, computerSelection)
 
 
 
