@@ -67,11 +67,26 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-// guardar las opciones de cada usuario en una variable
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChice()
 
-playRound(humanSelection, computerSelection)
+function playGame(){
+
+    for(let i = 0; i <=5; i++){
+        // guardar las opciones de cada usuario en una variable
+        let humanSelection = getHumanChoice()
+        let computerSelection = getComputerChice()
+
+        playRound(humanSelection, computerSelection)
+    }
+
+    if(humanScore > computerScore){
+        alert(`Felicidades has ganado con un puntaje de: ${humanScore}`)
+    }else{
+        alert(`Lo siento has perdido, la computadora gano con un puntaje de: ${computerScore}`)
+    }
+}
+
+playGame()
+
 
 
 
