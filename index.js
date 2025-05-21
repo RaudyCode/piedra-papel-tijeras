@@ -7,15 +7,27 @@ function getComputerChice(){
     // la computadora selecionara un numero aleatorio
     let numberOption = Math.floor((Math.random() * 3) + 1)
     
-    // la computadora retornara ese numero
+    // la computadora asignara el elemento que representa ese numero
+    let elemento;
 
-    return numberOption
+    if(numberOption == 1){
+        elemento = "piedra"
+    }else if(numberOption == 2){
+        elemento = "papel"
+    }else if(numberOption == 3){
+        elemento = "tijeras"
+    }
+
+    return elemento
 }
 
 function getHumanChoice(){
     // haz que usuario introdusca una opcion
-    let numberOption = prompt("Elige: 1. Piedra, 2. Papel, 3. Tijeras: ")
+    let option = prompt("Escriba su opciòn: 1. Piedra, 2. Papel, 3. Tijeras: ")
 
-    return numberOption
+    // retorna siempre en minuscula
+    return option.toLowerCase()
 }
+
+
 
